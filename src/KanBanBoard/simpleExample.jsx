@@ -21,7 +21,7 @@ export default function SimpleExample() {
 
     function handleDragStart(e) {
         console.log('drag start')
-        e.dataTransfer.clearData();
+        // e.dataTransfer.clearData();
         setEle(e.target);
     }
     function handleDragOver(e) {
@@ -48,6 +48,12 @@ export default function SimpleExample() {
                     Select this element, drag it to the drop zone and then release the selection
                     to move the element. </p>
             </div>
+            <div
+                onDrop={(e) => handleDrop(e)}
+                onDragOver={(e) => handleDragOver(e)}
+                style={styles.target}
+            >
+                Dro zone</div>
             <div
                 onDrop={(e) => handleDrop(e)}
                 onDragOver={(e) => handleDragOver(e)}
